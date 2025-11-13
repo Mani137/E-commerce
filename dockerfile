@@ -1,11 +1,5 @@
 FROM tomcat:9.0
 
-# Remove the default ROOT app 
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Copy your WAR file into the webapps directory
-COPY target/JtSpringProject-0.0.4-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
-
-# Expose the Tomcat default port
-EXPOSE 8080
 
